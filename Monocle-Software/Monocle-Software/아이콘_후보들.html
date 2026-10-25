@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Monocle Favicon & Logo Candidates</title>
+<style>
+  :root {
+    --bg: #090A0F;
+    --card: #12131C;
+    --border: #232536;
+    --accent: #FF5A36;
+    --text: #F0F2FA;
+    --muted: #8A8F9E;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    padding: 32px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .header { text-align: center; margin-bottom: 32px; }
+  .header h1 { font-size: 1.6rem; font-weight: 800; margin-bottom: 8px; letter-spacing: -0.02em; }
+  .header p { color: var(--muted); font-size: 0.9rem; }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1100px;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.2s;
+  }
+  .card:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+  }
+  .card-tag {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 6px;
+  }
+  .card-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+  .preview-large {
+    width: 100px;
+    height: 100px;
+    background: #0E0F17;
+    border: 1px solid #282B3E;
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+  }
+  .sizes-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: #0A0B10;
+    padding: 12px 18px;
+    border-radius: 12px;
+    border: 1px solid #1E202E;
+    margin-bottom: 16px;
+    width: 100%;
+    justify-content: space-around;
+  }
+  .size-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+  .size-label {
+    font-size: 0.65rem;
+    color: var(--muted);
+    font-weight: 600;
+  }
+  .nav-preview {
+    background: #0D0E15;
+    border: 1px solid #1F2130;
+    border-radius: 10px;
+    padding: 10px 14px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .nav-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+  }
+  .nav-title { font-size: 0.85rem; font-weight: 800; letter-spacing: -0.01em; }
+  .nav-sub { font-size: 0.55rem; font-weight: 700; color: var(--accent); letter-spacing: 0.12em; }
+  
+  .desc {
+    font-size: 0.8rem;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-top: 14px;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>MONOCLE 파비콘 & 로고 디자인 시안</h1>
+  <p>브라우저 탭(16px~32px)과 상단 네비게이션 바(34px)에 모두 완벽하게 어울리는 벡터 디자인 4종</p>
+</div>
+
+<div class="grid">
+
+  <!-- Type A: Cyber Minimal -->
+  <div class="card">
+    <div class="card-tag">Type A</div>
+    <div class="card-title">클래식 테크 모노클</div>
+    <div class="preview-large">
+      <svg width="60" height="60" viewBox="0 0 32 32" fill="none">
+        <circle cx="14" cy="15" r="9" stroke="#FF5A36" stroke-width="2.5" />
+        <path d="M10 11a6 6 0 0 1 7 0" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" opacity="0.9" />
+        <path d="M23 15h2a3 3 0 0 1 3 3v2a3 3 0 0 1-3 3h-2" stroke="#FF5A36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <circle cx="14" cy="15" r="2.5" fill="#FF5A36" />
+      </svg>
+    </div>
+    <div class="sizes-row">
+      <div class="size-item">
+        <span class="size-label">탭 16px</span>
+        <svg width="16" height="16" viewBox="0 0 32 32" fill="none">
+          <circle cx="14" cy="15" r="9" stroke="#FF5A36" stroke-width="3" />
+          <path d="M10 11a6 6 0 0 1 7 0" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" />
+          <path d="M23 15h2a3 3 0 0 1 3 3v2a3 3 0 0 1-3 3h-2" stroke="#FF5A36" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </div>
+      <div class="size-item">
+        <span class="size-label">앱 32px</span>
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+          <circle cx="14" cy="15" r="9" stroke="#FF5A36" stroke-width="2.5" />
+          <path d="M10 11a6 6 0 0 1 7 0" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" opacity="0.9" />
+          <path d="M23 15h2a3 3 0 0 1 3 3v2a3 3 0 0 1-3 3h-2" stroke="#FF5A36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <circle cx="14" cy="15" r="2.5" fill="#FF5A36" />
+        </svg>
+      </div>
+    </div>
+    <div class="nav-preview">
+      <div style="width:32px; height:32px; background:#181A26; border-radius:8px; display:flex; align-items:center; justify-content:center; border:1px solid #2B2E42;">
+        <svg width="20" height="20" viewBox="0 0 32 32" fill="none">
+          <circle cx="14" cy="15" r="9" stroke="#FF5A36" stroke-width="2.5" />
+          <path d="M10 11a6 6 0 0 1 7 0" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" opacity="0.9" />
+          <path d="M23 15h2a3 3 0 0 1 3 3v2a3 3 0 0 1-3 3h-2" stroke="#FF5A36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <circle cx="14" cy="15" r="2.5" fill="#FF5A36" />
+        </svg>
+      </div>
+      <div class="nav-text">
+        <span class="nav-title">MONOCLE</span>
+        <span class="nav-sub">SOFTWARE</span>
+      </div>
+    </div>
+    <div class="desc">외눈안경 렌즈 + 화이트 글레어(빛 반사) + 우측 체인 고리 + 초점 코어. 가장 균형감 있는 정석 테크 심볼.</div>
+  </div>
+
+  <!-- Type B: Minimal Focus -->
+  <div class="card">
+    <div class="card-tag">Type B</div>
+    <div class="card-title">포커스 렌즈 (본질주의)</div>
+    <div class="preview-large">
+      <svg width="60" height="60" viewBox="0 0 32 32" fill="none">
+        <circle cx="15" cy="15" r="10" stroke="#FFFFFF" stroke-width="2" opacity="0.3" />
+        <circle cx="15" cy="15" r="6.5" stroke="#FF5A36" stroke-width="2.5" stroke-dasharray="28 8" />
+        <path d="M25 15h3M15 5v3M5 15h3M15 25v3" stroke="#FF5A36" stroke-width="2" stroke-linecap="round" opacity="0.7" />
+        <circle cx="15" cy="15" r="2.5" fill="#FF5A36" />
+      </svg>
+    </div>
+    <div class="sizes-row">
+      <div class="size-item">
+        <span class="size-label">탭 16px</span>
+        <svg width="16" height="16" viewBox="0 0 32 32" fill="none">
+          <circle cx="15" cy="15" r="8" stroke="#FF5A36" stroke-width="3" />
+          <circle cx="15" cy="15" r="3" fill="#FF5A36" />
+        </svg>
+      </div>
+      <div class="size-item">
+        <span class="size-label">앱 32px</span>
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+          <circle cx="15" cy="15" r="9" stroke="#FF5A36" stroke-width="2.5" />
+          <path d="M24 15h3M15 6v3M6 15h3M15 24v3" stroke="#FF5A36" stroke-width="2" stroke-linecap="round" />
+          <circle cx="15" cy="15" r="2.5" fill="#FF5A36" />
+        </svg>
+      </div>
+    </div>
+    <div class="nav-preview">
+      <div style="width:32px; height:32px; background:#181A26; border-radius:8px; display:flex; align-items:center; justify-content:center; border:1px solid #2B2E42;">
+        <svg width="20" height="20" viewBox="0 0 32 32" fill="none">
+          <circle cx="15" cy="15" r="9" stroke="#FF5A36" stroke-width="2.5" />
+          <path d="M24 15h3M15 6v3M6 15h3M15 24v3" stroke="#FF5A36" stroke-width="2" stroke-linecap="round" />
+          <circle cx="15" cy="15" r="2.5" fill="#FF5A36" />
+        </svg>
+      </div>
+      <div class="nav-text">
+        <span class="nav-title">MONOCLE</span>
+        <span class="nav-sub">SOFTWARE</span>
+      </div>
+    </div>
+    <div class="desc">"본질에 초점을 맞추다"를 상징하는 카메라 조리개/조준선 포커스 렌즈 모티프. Linear/Raycast 느낌.</div>
+  </div>
+
+  <!-- Type C: Elegant Monocle Loop -->
+  <div class="card">
+    <div class="card-tag">Type C</div>
+    <div class="card-title">시그니처 모노클 루프</div>
+    <div class="preview-large">
+      <svg width="60" height="60" viewBox="0 0 32 32" fill="none">
+        <circle cx="13" cy="14" r="8.5" stroke="#FFFFFF" stroke-width="2.2" />
+        <path d="M13 14m-5 0a5 5 0 1 0 10 0a5 5 0 1 0 -10 0" stroke="#FF5A36" stroke-width="2" fill="#FF5A36" fill-opacity="0.15" />
+        <path d="M21.5 14c2.5 0 4.5 2 4.5 4.5v1.5a3 3 0 0 1-3 3h-2" stroke="#FF5A36" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+        <circle cx="21.5" cy="14" r="1.5" fill="#FFFFFF" />
+      </svg>
+    </div>
+    <div class="sizes-row">
+      <div class="size-item">
+        <span class="size-label">탭 16px</span>
+        <svg width="16" height="16" viewBox="0 0 32 32" fill="none">
+          <circle cx="13" cy="14" r="8.5" stroke="#FF5A36" stroke-width="3" />
+          <path d="M21.5 14c2.5 0 4 1.5 4 3.5v1.5a3 3 0 0 1-3 3" stroke="#FF5A36" stroke-width="2.5" stroke-linecap="round" />
+        </svg>
+      </div>
+      <div class="size-item">
+        <span class="size-label">앱 32px</span>
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+          <circle cx="13" cy="14" r="8.5" stroke="#FFFFFF" stroke-width="2.2" />
+          <circle cx="13" cy="14" r="5" fill="#FF5A36" />
+          <path d="M21.5 14c2.5 0 4.5 2 4.5 4.5v1.5a3 3 0 0 1-3 3h-2" stroke="#FF5A36" stroke-width="2.2" stroke-linecap="round" />
+        </svg>
+      </div>
+    </div>
+    <div class="nav-preview">
+      <div style="width:32px; height:32px; background:#181A26; border-radius:8px; display:flex; align-items:center; justify-content:center; border:1px solid #2B2E42;">
+        <svg width="20" height="20" viewBox="0 0 32 32" fill="none">
+          <circle cx="13" cy="14" r="8.5" stroke="#FFFFFF" stroke-width="2.2" />
+          <circle cx="13" cy="14" r="5" fill="#FF5A36" />
+          <path d="M21.5 14c2.5 0 4.5 2 4.5 4.5v1.5a3 3 0 0 1-3 3h-2" stroke="#FF5A36" stroke-width="2.2" stroke-linecap="round" />
+        </svg>
+      </div>
+      <div class="nav-text">
+        <span class="nav-title">MONOCLE</span>
+        <span class="nav-sub">SOFTWARE</span>
+      </div>
+    </div>
+    <div class="desc">화이트 메탈릭 외곽 림 + 오렌지 이너 렌즈 + 우아한 외눈안경 스트링 고리. 모노클의 아이덴티티가 가장 직관적.</div>
+  </div>
+
+  <!-- Type D: Pure Squircle Monogram -->
+  <div class="card">
+    <div class="card-tag">Type D</div>
+    <div class="card-title">M-모노클 스쿼클 엠블럼</div>
+    <div class="preview-large">
+      <svg width="60" height="60" viewBox="0 0 32 32" fill="none">
+        <rect x="3" y="3" width="26" height="26" rx="8" fill="#1A1C29" stroke="#2D3045" stroke-width="1.5" />
+        <circle cx="16" cy="16" r="7.5" stroke="#FF5A36" stroke-width="2.5" />
+        <path d="M12.5 12.5a5 5 0 0 1 7 0" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" />
+        <line x1="23.5" y1="16" x2="25.5" y2="16" stroke="#FF5A36" stroke-width="2" stroke-linecap="round" />
+      </svg>
+    </div>
+    <div class="sizes-row">
+      <div class="size-item">
+        <span class="size-label">탭 16px</span>
+        <svg width="16" height="16" viewBox="0 0 32 32" fill="none">
+          <rect x="2" y="2" width="28" height="28" rx="8" fill="#FF5A36" />
+          <circle cx="16" cy="16" r="6" fill="#0E0F17" />
+          <circle cx="16" cy="16" r="2.5" fill="#FFFFFF" />
+        </svg>
+      </div>
+      <div class="size-item">
+        <span class="size-label">앱 32px</span>
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+          <rect x="3" y="3" width="26" height="26" rx="8" fill="#1A1C29" stroke="#FF5A36" stroke-width="1.5" />
+          <circle cx="16" cy="16" r="7" stroke="#FF5A36" stroke-width="2.2" />
+          <path d="M13 13a4.5 4.5 0 0 1 6 0" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" />
+        </svg>
+      </div>
+    </div>
+    <div class="nav-preview">
+      <div style="width:32px; height:32px; background:#181A26; border-radius:8px; display:flex; align-items:center; justify-content:center; border:1px solid #2B2E42;">
+        <svg width="20" height="20" viewBox="0 0 32 32" fill="none">
+          <circle cx="16" cy="16" r="8" stroke="#FF5A36" stroke-width="2.5" />
+          <path d="M12.5 12.5a5 5 0 0 1 7 0" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" />
+          <circle cx="16" cy="16" r="2.5" fill="#FF5A36" />
+        </svg>
+      </div>
+      <div class="nav-text">
+        <span class="nav-title">MONOCLE</span>
+        <span class="nav-sub">SOFTWARE</span>
+      </div>
+    </div>
+    <div class="desc">앱 아이콘(스쿼클) 자체에 외눈안경을 임베딩한 애플/Vercel 스타일의 볼드한 테크 엠블럼.</div>
+  </div>
+
+</div>
+
+</body>
+</html>
