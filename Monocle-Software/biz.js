@@ -3,9 +3,9 @@
 window.MONOCLE = {
   name: '모노클 소프트웨어 (MONOCLE SOFTWARE)',
   owner: '김건',
-  regno: '',        // 사업자등록번호 예: 000-00-00000
+  regno: '698-08-03528',
   mailorder: '',    // 통신판매업 신고번호 예: 2026-부산금정-0000
-  addr: '부산광역시 금정구',
+  addr: '부산광역시 금정구 서동로66번길 27(부곡동)',
   email: 'monoclesoftware.support@gmail.com',
   tel: ''
 };
