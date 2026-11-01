@@ -320,6 +320,16 @@
             border: 1px solid rgba(34, 197, 94, 0.3);
         }
 
+        .badge-soon {
+            background: rgba(255, 90, 54, 0.12);
+            color: #FF8A6E;
+            border: 1px solid rgba(255, 90, 54, 0.3);
+        }
+        #mLinks a { color: var(--text-secondary); text-decoration: underline; text-underline-offset: 3px; }
+        .footer-biz { display: flex; flex-wrap: wrap; gap: 2px 8px; margin-top: 10px; font-size: 0.78rem; line-height: 1.7; }
+        .footer-biz b { color: var(--text-secondary); font-weight: 600; }
+        .footer-biz i { font-style: normal; opacity: .5; }
+
         .app-category { font-size: 0.82rem; color: var(--text-muted); font-weight: 500; }
         .app-desc {
             font-size: 0.92rem;
@@ -593,7 +603,7 @@
             </p>
             <div class="hero-actions">
                 <button type="button" onclick="scrollToProjects()" class="btn btn-primary">프로젝트 살펴보기 ↓</button>
-                <button type="button" onclick="openLegalModal('support')" class="btn btn-secondary">고객 지원 (Support)</button>
+                <a href="support/" class="btn btn-secondary">고객 지원 (Support)</a>
             </div>
         </div>
     </section>
@@ -628,6 +638,33 @@
                         <span class="app-tag">PWA</span>
                         <span class="app-tag">Mobile First</span>
                         <span class="app-tag">Offline-Ready</span>
+                    </div>
+                    <div class="action-arrow">→</div>
+                </div>
+            </div>
+
+            <!-- Project: TOURDY -->
+            <div class="project-card" onclick="openModal('tourdy')">
+                <div>
+                    <div class="card-top">
+                        <div class="app-icon">✈️</div>
+                        <div class="app-meta">
+                            <div class="app-name-row">
+                                <span class="app-name">투어디</span>
+                                <span class="app-badge badge-soon">Soon</span>
+                            </div>
+                            <span class="app-category">iOS · Android · Web · 공부 기록 &amp; 여행</span>
+                        </div>
+                    </div>
+                    <p class="app-desc">
+                        공부한 시간만큼 마일리지가 쌓이고, 그 마일리지로 국내·세계·우주를 여행하는 공부 타이머 앱.
+                    </p>
+                </div>
+                <div class="card-bottom">
+                    <div class="app-tags">
+                        <span class="app-tag">Study Timer</span>
+                        <span class="app-tag">Planner</span>
+                        <span class="app-tag">Weekly Challenge</span>
                     </div>
                     <div class="action-arrow">→</div>
                 </div>
@@ -692,11 +729,12 @@
         <div class="container footer-inner">
             <div>
                 © 2026 <strong>MONOCLE SOFTWARE</strong>. All rights reserved.
+                <div class="footer-biz" data-biz></div>
             </div>
             <div class="footer-links">
-                <a href="javascript:void(0)" onclick="openLegalModal('support')">Support</a>
-                <a href="javascript:void(0)" onclick="openLegalModal('privacy')">Privacy Policy</a>
-                <a href="javascript:void(0)" onclick="openLegalModal('terms')">Terms of Use</a>
+                <a href="support/">고객 지원</a>
+                <a href="privacy/"><b>개인정보 처리방침</b></a>
+                <a href="terms/">이용약관</a>
             </div>
         </div>
     </footer>
@@ -722,6 +760,7 @@
                     </ul>
                 </div>
             </div>
+            <div id="mLinks" style="display:flex;gap:8px;flex-wrap:wrap;margin-top:20px;font-size:.82rem;color:var(--text-muted)"></div>
             <div class="modal-footer" id="mFooter">
                 <a href="#" target="_blank" class="btn btn-primary" id="mActionBtn" style="flex: 1;">웹앱 바로 실행하기 ↗</a>
                 <button class="btn btn-secondary" onclick="closeModal()">닫기</button>
@@ -745,9 +784,7 @@
     </div>
 
     <!-- Toast Notification -->
-    <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-zinc-800 border border-white/10 text-white text-xs px-4 py-2 rounded-full shadow-lg opacity-0 pointer-events-none transition-all duration-300">
-        알림 메시지
-    </div>
+    <div id="toast" class="toast">알림 메시지</div>
 
     <script>
         // Spotlight Glow on mouse move
@@ -774,7 +811,23 @@
                     '오프라인 환경에서도 100% 작동하는 Service Worker 캐싱'
                 ],
                 actionText: '웹앱 바로 실행하기 ↗',
-                actionUrl: '#'
+                actionUrl: '#',
+                links: [['개인정보 처리방침', 'trigger-drill/privacy/'], ['이용약관', 'trigger-drill/terms/']]
+            },
+            'tourdy': {
+                icon: '✈️',
+                title: '투어디 (TOURDY)',
+                category: 'iOS · Android · Web · 공부 기록 & 여행',
+                desc: '공부한 시간이 마일리지가 되고, 마일리지로 국내 도시와 세계 여러 나라, 우주까지 여행하며 도장과 기념품을 모으는 공부 타이머 앱입니다. 할 일·반복 할 일·D-day·통계로 공부를 관리하고, 주간 챌린지에서 같은 리그 사람들과 공부 시간을 겨룰 수 있습니다.',
+                highlights: [
+                    '공부 타이머와 직접 기록 추가, 타임 테이블·캘린더·링 형태의 하루 보기',
+                    '마일리지로 떠나는 국내·세계·우주 여행, 도장·기념품 도감과 여권 꾸미기',
+                    '등급별 리그로 겨루는 주간 챌린지',
+                    '로그인 없이도 모든 기본 기능 이용, 로그인하면 여러 기기 동기화'
+                ],
+                actionText: '정식 출시 준비 중',
+                actionUrl: '',
+                links: [['개인정보 처리방침', 'tourdy/privacy/'], ['이용약관', 'tourdy/terms/']]
             }
         };
 
@@ -782,23 +835,33 @@
             const data = projectsData[id];
             if (!data) return;
 
-            document.getElementById('modalIcon').innerText = data.icon;
-            document.getElementById('modalTitle').innerText = data.title;
-            document.getElementById('modalSub').innerText = data.sub;
-            document.getElementById('modalDesc').innerText = data.desc;
+            document.getElementById('mIcon').innerText = data.icon;
+            document.getElementById('mTitle').innerText = data.title;
+            document.getElementById('mCategory').innerText = data.category;
+            document.getElementById('mDesc').innerText = data.desc;
 
-            const hlContainer = document.getElementById('mHighlights');
-            hlContainer.innerHTML = '';
-            data.features.forEach(f => {
+            const hl = document.getElementById('mHighlights');
+            hl.innerHTML = '';
+            data.highlights.forEach(f => {
                 const li = document.createElement('li');
-                li.className = 'flex items-start gap-2.5';
-                li.innerHTML = '<span class="text-[#ff5733] font-bold">✓</span><span>' + f + '</span>';
-                featList.appendChild(li);
+                li.textContent = f;
+                hl.appendChild(li);
             });
 
-            const actionBtn = document.getElementById('modalAction');
-            actionBtn.innerText = data.actionText;
-            actionBtn.href = data.actionUrl;
+            const btn = document.getElementById('mActionBtn');
+            btn.innerText = data.actionText;
+            if (data.actionUrl && data.actionUrl !== '#') {
+                btn.href = data.actionUrl;
+                btn.removeAttribute('aria-disabled');
+                btn.style.opacity = ''; btn.style.pointerEvents = '';
+            } else {
+                btn.removeAttribute('href');
+                btn.setAttribute('aria-disabled', 'true');
+                btn.style.opacity = '.5'; btn.style.pointerEvents = 'none';
+            }
+
+            const lk = document.getElementById('mLinks');
+            lk.innerHTML = (data.links || []).map(([t, u]) => `<a href="${u}">${t}</a>`).join('<span aria-hidden="true">·</span>');
 
             document.getElementById('projectModal').classList.add('open');
             document.body.style.overflow = 'hidden';
@@ -991,13 +1054,11 @@
         function showToast(msg) {
             const toast = document.getElementById('toast');
             toast.innerText = msg;
-            toast.classList.remove('opacity-0', 'pointer-events-none');
-            toast.classList.add('opacity-100');
-            setTimeout(() => {
-                toast.classList.add('opacity-0', 'pointer-events-none');
-                toast.classList.remove('opacity-100');
-            }, 2500);
+            toast.classList.add('show');
+            clearTimeout(showToast.t);
+            showToast.t = setTimeout(() => toast.classList.remove('show'), 2500);
         }
     </script>
+    <script src="biz.js"></script>
 </body>
 </html>
