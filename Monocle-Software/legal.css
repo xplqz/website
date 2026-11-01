@@ -48,10 +48,13 @@ footer.site .biz b{color:var(--sub);font-weight:600}
 footer.site .biz i{font-style:normal;opacity:.5}
 footer.site .fl{display:flex;flex-wrap:wrap;gap:14px;margin-top:10px}
 footer.site .fl a{text-decoration:none;color:var(--sub)}footer.site .fl a:hover{color:var(--ink)}
-.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;margin:12px 0}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;margin:12px 0}
 .card{display:block;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;text-decoration:none;transition:border-color .2s}
 .card:hover{border-color:var(--line2)}
 .card b{display:block;font-size:1rem;margin-bottom:4px}.card span{font-size:.85rem;color:var(--sub)}
+.card.app{display:flex;align-items:center;gap:14px}
+.card .ic{width:52px;height:52px;border-radius:13px;flex:none;object-fit:cover;border:1px solid var(--line2)}
+.card .ic.em{display:grid;place-items:center;background:#1C1E2B;font-size:24px}
 details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin:8px 0}
 details summary{cursor:pointer;font-weight:600;font-size:.95rem}
 details p{margin-top:8px}

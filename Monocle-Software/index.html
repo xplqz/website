@@ -647,7 +647,7 @@
             <div class="project-card" onclick="openModal('tourdy')">
                 <div>
                     <div class="card-top">
-                        <div class="app-icon">✈️</div>
+                        <div class="app-icon" style="padding:0;overflow:hidden"><img src="icons/tourdy.png" alt="" width="56" height="56" style="width:100%;height:100%;display:block"></div>
                         <div class="app-meta">
                             <div class="app-name-row">
                                 <span class="app-name">투어디</span>
@@ -816,6 +816,7 @@
             },
             'tourdy': {
                 icon: '✈️',
+                iconImg: 'icons/tourdy.png',
                 title: '투어디 (TOURDY)',
                 category: 'iOS · Android · Web · 공부 기록 & 여행',
                 desc: '공부한 시간이 마일리지가 되고, 마일리지로 국내 도시와 세계 여러 나라, 우주까지 여행하며 도장과 기념품을 모으는 공부 타이머 앱입니다. 할 일·반복 할 일·D-day·통계로 공부를 관리하고, 주간 챌린지에서 같은 리그 사람들과 공부 시간을 겨룰 수 있습니다.',
@@ -835,7 +836,9 @@
             const data = projectsData[id];
             if (!data) return;
 
-            document.getElementById('mIcon').innerText = data.icon;
+            const mi = document.getElementById('mIcon');
+            if (data.iconImg) { mi.innerHTML = '<img src="' + data.iconImg + '" alt="" style="width:100%;height:100%;border-radius:inherit;display:block">'; mi.style.overflow = 'hidden'; }
+            else { mi.innerText = data.icon; }
             document.getElementById('mTitle').innerText = data.title;
             document.getElementById('mCategory').innerText = data.category;
             document.getElementById('mDesc').innerText = data.desc;
