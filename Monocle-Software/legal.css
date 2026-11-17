@@ -8,7 +8,7 @@ a{color:inherit}
 nav.top{position:sticky;top:0;z-index:10;background:rgba(9,10,15,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
 nav.top .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
 .brand{display:flex;align-items:center;gap:10px;font-weight:800;text-decoration:none;letter-spacing:.02em}
-.brand i{width:26px;height:26px;border-radius:7px;background:#12131C;display:grid;place-items:center;border:1px solid var(--line2)}
+.brand i{display:none}
 .brand i::after{content:"";width:10px;height:10px;border-radius:50%;border:2px solid var(--accent)}
 nav.top .links{display:flex;gap:18px;font-size:.88rem;color:var(--sub)}
 nav.top .links a{text-decoration:none}nav.top .links a:hover{color:var(--ink)}

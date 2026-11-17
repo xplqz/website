@@ -1,12 +1,12 @@
-/* 모노클 소프트웨어 사업자 정보 — 모든 페이지 아래쪽과 약관·방침이 이 한 곳을 씀.
+/* 래플린 사업자 정보 — 모든 페이지 아래쪽과 약관·방침이 이 한 곳을 씀.
    빈칸('')은 화면에 나오지 않음. 통신판매업 신고 뒤 regno·mailorder·addr(상세 주소)를 채우면 전체에 반영됨. */
 window.MONOCLE = {
-  name: '모노클 소프트웨어 (MONOCLE SOFTWARE)',
+  name: '래플린 (RAPPLIN)',
   owner: '김건',
   regno: '698-08-03528',
   mailorder: '',    // 통신판매업 신고번호 예: 2026-부산금정-0000
   addr: '부산광역시 금정구 서동로66번길 27(부곡동)',
-  email: 'monoclesoftware.support@gmail.com',
+  email: 'gun@rapplin.co.kr',
   tel: ''
 };
 // 투어디 약관·방침 시행일 (출시일). 비어 있으면 '정식 출시일부터 시행'으로 표시
