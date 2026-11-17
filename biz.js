@@ -1,6 +1,6 @@
 /* 래플린 사업자 정보 — 모든 페이지 아래쪽과 약관·방침이 이 한 곳을 씀.
    빈칸('')은 화면에 나오지 않음. 통신판매업 신고 뒤 regno·mailorder·addr(상세 주소)를 채우면 전체에 반영됨. */
-window.MONOCLE = {
+window.RAPPLIN = {
   name: '래플린 (RAPPLIN)',
   owner: '김건',
   regno: '698-08-03528',
@@ -13,7 +13,7 @@ window.MONOCLE = {
 window.TOURDY_EFFECTIVE = '';
 
 (function () {
-  const B = window.MONOCLE;
+  const B = window.RAPPLIN;
   const rows = [['상호', B.name], ['대표', B.owner], ['사업자등록번호', B.regno], ['통신판매업 신고', B.mailorder], ['주소', B.addr], ['이메일', B.email], ['전화', B.tel]].filter(r => r[1]);
   document.querySelectorAll('[data-biz]').forEach(el => {
     el.innerHTML = rows.map(([k, v]) => `<span><b>${k}</b> ${v}</span>`).join('<i aria-hidden="true">·</i>');
