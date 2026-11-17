@@ -6,7 +6,7 @@ window.MONOCLE = {
   regno: '698-08-03528',
   mailorder: '',    // 통신판매업 신고번호 예: 2026-부산금정-0000
   addr: '부산광역시 금정구 서동로66번길 27(부곡동)',
-  email: 'gun@rapplin.co.kr',
+  email: 'contact@rapplin.co.kr',
   tel: ''
 };
 // 투어디 약관·방침 시행일 (출시일). 비어 있으면 '정식 출시일부터 시행'으로 표시
