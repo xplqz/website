@@ -35,8 +35,8 @@ canvas#art{position:fixed;inset:0;width:100%;height:100%;z-index:0;display:block
 main{position:relative;z-index:1}
 .wide{font-family:Archivo,sans-serif;font-stretch:125%;font-weight:900;letter-spacing:-.02em;line-height:.9}
 nav{position:fixed;inset:0 0 auto;z-index:5;display:flex;justify-content:space-between;align-items:center;padding:16px max(4vw,16px);font-size:14px}
-nav .wide{font-size:17px;letter-spacing:.02em;opacity:0;transition:opacity .45s ease}
-.logo-on nav .wide,.menu-open nav .wide{opacity:1}
+nav .wide{font-size:17px;letter-spacing:.02em;opacity:var(--lo,0);transition:opacity .3s ease-out}
+.menu-open nav .wide{opacity:1}
 nav div{display:flex;gap:clamp(14px,2.6vw,32px)}nav a{text-decoration:none;opacity:.85;font-family:Archivo,sans-serif;font-stretch:112%;font-weight:700;font-size:13px;letter-spacing:.08em}nav a:hover{opacity:1}
 .hero{position:relative;min-height:100vh;min-height:100svh;display:grid;place-items:center;text-align:center;padding:80px 16px}
 .hero .wide{font-size:clamp(54px,15vw,260px);text-shadow:0 2px 40px rgba(0,0,0,.25)}
@@ -268,7 +268,7 @@ requestAnimationFrame(loop);
 <script>
 {
 const R0=document.documentElement;
-const big=document.querySelector('.hero .wide');if(big){new IntersectionObserver(([e])=>R0.classList.toggle('logo-on',!e.isIntersecting)).observe(big)}
+const big=document.querySelector('.hero .wide');if(big){let q=0;const up=()=>{q=0;const r=big.getBoundingClientRect();R0.style.setProperty('--lo',Math.max(0,Math.min(1,(170-r.bottom)/130)).toFixed(3))};addEventListener('scroll',()=>{if(!q){q=1;requestAnimationFrame(up)}},{passive:true});addEventListener('resize',up);up()}
 const b=document.querySelector('.burger'),m=document.getElementById('mnav'),R=document.documentElement;
 const set=o=>{R.classList.toggle('menu-open',o);b.setAttribute('aria-expanded',o);b.setAttribute('aria-label',o?'메뉴 닫기':'메뉴 열기');m.setAttribute('aria-hidden',!o)};
 b.addEventListener('click',()=>set(!R.classList.contains('menu-open')));
