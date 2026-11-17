@@ -135,12 +135,27 @@ footer .fl a{text-decoration:none}footer .fl a:hover{text-decoration:underline;t
 footer .fl i{font-style:normal;margin:0 8px;opacity:.7}
 footer .cp{margin-top:12px;font-size:14px}
 a:focus-visible{outline:2px solid var(--bone);outline-offset:3px}
-@media(max-width:600px){nav{gap:12px}nav .wide{font-size:15px}nav div{gap:12px}nav a{font-size:11px;letter-spacing:.04em}.hint{display:none}}
+.burger{display:none}.mnav{display:none}
+@media(max-width:600px){
+nav .links{display:none}
+.burger{display:grid;align-content:center;gap:6px;width:44px;height:44px;margin-right:-10px;padding:0 10px;background:none;border:0;cursor:pointer;position:relative;z-index:7}
+.burger i{display:block;height:2px;background:var(--bone);border-radius:2px;transition:transform .35s cubic-bezier(.65,0,.35,1),opacity .2s}
+.menu-open .burger i:nth-child(1){transform:translateY(8px) rotate(45deg)}
+.menu-open .burger i:nth-child(2){opacity:0}
+.menu-open .burger i:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+.mnav{display:flex;flex-direction:column;justify-content:center;gap:clamp(6px,2vh,18px);position:fixed;inset:0;z-index:4;padding:80px max(6vw,20px);background:rgba(7,7,10,.86);opacity:0;visibility:hidden;transition:opacity .35s ease,visibility 0s .35s}
+.mnav a{font-family:Archivo,sans-serif;font-stretch:125%;font-weight:900;font-size:clamp(40px,13vw,64px);line-height:1;letter-spacing:-.02em;color:var(--bone);text-decoration:none;padding:6px 0;transform:translateY(40px);opacity:0;transition:transform .5s cubic-bezier(.2,.8,.2,1),opacity .4s ease}
+.menu-open .mnav{opacity:1;visibility:visible;transition:opacity .35s ease}
+.menu-open .mnav a{transform:none;opacity:1}
+.menu-open .mnav a:nth-child(2){transition-delay:.06s}.menu-open .mnav a:nth-child(3){transition-delay:.12s}.menu-open .mnav a:nth-child(4){transition-delay:.18s}
+.menu-open body{overflow:hidden}
+}
 </style>
 </head>
 <body>
 <canvas id="art" aria-hidden="true"></canvas>
-<nav><span class="wide">RAPPLIN</span><div><a href="#top">NEWS</a><a href="#top">COMPANY</a><a href="#projects">PROJECTS</a><a href="support/">SUPPORT</a></div></nav>
+<nav><span class="wide">RAPPLIN</span><div class="links"><a href="#top">NEWS</a><a href="#top">COMPANY</a><a href="#projects">PROJECTS</a><a href="support/">SUPPORT</a></div><button class="burger" aria-label="메뉴 열기" aria-expanded="false" aria-controls="mnav"><i></i><i></i><i></i></button></nav>
+<div class="mnav" id="mnav" aria-hidden="true"><a href="#top">NEWS</a><a href="#top">COMPANY</a><a href="#projects">PROJECTS</a><a href="support/">SUPPORT</a></div>
 <main>
   <section class="hero" id="top">
     <div>
@@ -247,6 +262,15 @@ const loop=now=>{
 };
 requestAnimationFrame(loop);
 }}
+}
+</script>
+<script>
+{
+const b=document.querySelector('.burger'),m=document.getElementById('mnav'),R=document.documentElement;
+const set=o=>{R.classList.toggle('menu-open',o);b.setAttribute('aria-expanded',o);b.setAttribute('aria-label',o?'메뉴 닫기':'메뉴 열기');m.setAttribute('aria-hidden',!o)};
+b.addEventListener('click',()=>set(!R.classList.contains('menu-open')));
+m.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>set(false)));
+addEventListener('keydown',e=>{if(e.key==='Escape')set(false)});
 }
 </script>
 </body>
