@@ -125,7 +125,7 @@ nav div{display:flex;gap:clamp(14px,2.6vw,32px)}nav a{text-decoration:none;opaci
 .js .card.in>*,.js .card.in .split span{opacity:1;transform:none}
 .js .quote p{opacity:0;transform:translateY(30px);letter-spacing:.06em;transition:opacity 1.2s ease,transform 1.2s ease,letter-spacing 1.6s ease}
 .js .quote.in p{opacity:1;transform:none;letter-spacing:0}
-@media(prefers-reduced-motion:reduce){.js .card.gauge::after,.js .card.sweep::after{display:none}.js .card,.js .card.gauge,.js .card.sweep{clip-path:none!important;transform:none!important;opacity:0;transition:opacity 1s ease!important}.js .card.in{opacity:1}.js .card>*,.js .card .split span,.js .card .ico,.js .card .td,.js .card .ap{transform:none!important}.js .card.in .aW,.js .card.in .aA,.js .card.in .shd,.js .card.in .core{animation:none!important}.js .card.in .dot{animation:none!important}.js .card.in .arc.i,.js .card.in .arc.o{animation-duration:2.4s!important}}
+@media(prefers-reduced-motion:reduce){.js .card.gauge::after,.js .card.sweep::after{display:none}.js .card,.js .card.gauge,.js .card.sweep{clip-path:none!important;transform:none!important;opacity:0;transition:opacity .7s ease!important}.js .card.in{opacity:1}.js .card>*,.js .card .split span,.js .card .ico,.js .card .td,.js .card .ap{transform:none!important}.js .card.in .aW,.js .card.in .aA,.js .card.in .shd,.js .card.in .core{animation:none!important}.js .card.in .dot{animation:none!important}}
 .quote{min-height:80vh;display:grid;place-items:center;text-align:center;padding:60px 16px}
 .quote p{margin:0;font-size:clamp(28px,4.4vw,52px);font-weight:900;line-height:1.2;max-width:15em;text-wrap:balance;text-shadow:0 2px 30px rgba(0,0,0,.35)}
 footer{background:#141416;padding:30px max(4vw,16px) 34px;color:var(--bone)}
@@ -236,12 +236,12 @@ addEventListener('pointermove',e=>{tx=e.clientX*sc;ty=(innerHeight-e.clientY)*sc
 const rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const touch=matchMedia('(hover: none)').matches;let lastTouch=-1e9;
 addEventListener('touchmove',e=>{const p=e.touches[0];if(p){tx=p.clientX*sc;ty=(innerHeight-p.clientY)*sc;lastTouch=performance.now()}},{passive:true});
-const t0=performance.now();
+const t0=performance.now();let lt=t0;
 const loop=now=>{
-  const t=(now-t0)/1000*(rm?.25:1);
+  const t=(now-t0)/1000,dt=Math.min(.1,(now-lt)/1000);lt=now;const k=1-Math.pow(.96,dt*60),kt=1-Math.pow(.96,dt*60);
   if(touch&&now-lastTouch>2500){tx=c.width*(.5+.32*Math.sin(t*.21));ty=c.height*(.5+.28*Math.cos(t*.16))}
-  mx+=(tx-mx)*.04;my+=(ty-my)*.04;
-  gl.uniform2f(uR,c.width,c.height);gl.uniform1f(uT,t);gl.uniform2f(uM,mx,my);gl.uniform1f(uS,scrollY/innerHeight);va+=(ta-va)*.04;vb+=(tb-vb)*.04;gl.uniform1f(uA,va);gl.uniform1f(uB,vb);
+  mx+=(tx-mx)*k;my+=(ty-my)*k;
+  gl.uniform2f(uR,c.width,c.height);gl.uniform1f(uT,t);gl.uniform2f(uM,mx,my);gl.uniform1f(uS,scrollY/innerHeight);va+=(ta-va)*kt;vb+=(tb-vb)*kt;gl.uniform1f(uA,va);gl.uniform1f(uB,vb);
   gl.drawArrays(gl.TRIANGLES,0,3);
   requestAnimationFrame(loop);
 };
